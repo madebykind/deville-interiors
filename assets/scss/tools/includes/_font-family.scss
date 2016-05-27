@@ -1,0 +1,27 @@
+// 4. FONT-FAMILY MIXIN
+// ==========================================================================
+//
+// Set a font-family and optional weight (as our font's serve variant weights
+// as alt family names)
+//
+// EXAMPLE:
+//
+// h1 {
+//      @include font-family(apercu, bold);
+// }
+// pre {
+//      @include font-family(mono);
+// }
+// OUTPUT:
+//
+// h1 {
+//      font-family: 'Apercu Bold', Helvetica, Arial, sans-serif;
+// }
+//
+// pre {
+//      font-family: Monaco, Consolas, "Lucida Console", monospace;
+// }
+
+@mixin font-family($face, $weight: normal) {
+    font-family: $face;
+}

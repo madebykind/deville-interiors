@@ -1,0 +1,40 @@
+// 3. FONT-SCALE MIXIN
+// ==========================================================================
+// Often we’ll want to set the font-size and the line-height of a particular
+// module at the same time. This font-scale mixin can be used to do just that.
+//
+//
+// EXAMPLE:
+//
+// h1 {
+//      @include font-scale(xlarge);
+// }
+//
+// OUTPUT:
+//
+// h1 {
+//      font-size: 1.7rem;
+//      line-height: 1.95rem;
+// }
+//
+
+@mixin font-scale($size) {
+    font-size: calc-font-size($size);
+    line-height: calc-line-height($size);
+}
+
+
+@function calc-font-size($size) {
+    $sizes: map-get($type, sizes);
+    $values: map-get($sizes, $size);
+
+    @return rem-calc(map-get($values, font-size));
+}
+
+
+@function calc-line-height($size) {
+    $sizes: map-get($type, sizes);
+    $values: map-get($sizes, $size);
+
+    @return rem-calc(map-get($values, line-height));
+}

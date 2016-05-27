@@ -1,0 +1,71 @@
+// ==========================================================================
+// NAV ATOM
+// ==========================================================================
+
+
+.nav {
+    text-align: center;
+
+    .nav__item {
+        @extend .link--plain;
+
+        @include link {
+            display: block;
+            padding: rem-calc(5);
+            border: 1px solid transparent;
+            border-top-color: transparentize(black, 0.9);
+            @include font-scale(mid);
+            @include font-family(map-get($type, secondary-family));
+            color: palette(green, light);
+            transition: color 250ms;
+
+            &:first-child {
+                border-top-color: transparent;
+            }
+
+            &.is-active {
+                color: palette(green, dark);
+            }
+        }
+
+        @include link-hover {
+            color: palette(green, dark);
+        }
+
+        @include respond-to(medium) {
+            @include link {
+                display: inline-block;
+                border-color: transparent;
+                padding: rem-calc(5 15);
+
+                &.is-active {
+                    border-color: palette(green, dark);
+                }
+            }
+        }
+    }
+}
+
+.nav--list {
+
+
+    .nav__item {
+        @extend .link--plain;
+
+        @include link {
+            display: block;
+            @include font-family(map-get($type, secondary-family));
+            @include font-scale(xsmall);
+            color: palette(grey, dark);
+
+            &.is-active {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+
+        @include link-hover {
+            text-decoration: underline;
+        }
+    }
+}

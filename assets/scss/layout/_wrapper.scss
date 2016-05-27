@@ -1,0 +1,25 @@
+// ==========================================================================
+// WRAPPER
+// ==========================================================================
+
+
+.wrapper {
+    max-width: rem-calc(map-get(map-get($grids, xlarge), width));
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rem-calc(20);
+    padding-right: rem-calc(20);
+}
+
+
+
+.wrapper--medium {
+    @include respond-to(medium) {
+        max-width: rem-calc(map-get(map-get($grids, xlarge), width));
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: rem-calc(20);
+        padding-right: rem-calc(20);
+    }
+}
+

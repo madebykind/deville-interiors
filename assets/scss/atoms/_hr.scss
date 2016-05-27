@@ -1,0 +1,20 @@
+// ==========================================================================
+// HR
+// ==========================================================================
+
+hr {
+    height: rem-calc(7);
+    font: 0/0 a;
+    border: none;
+    background: none;
+    background-image: url("/dist/images/hr.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: rem-calc(370);
+    margin: rem-calc(30 0);
+}
+
+
+.hr--light {
+    background-image: url("/dist/images/hr-light.png");
+}

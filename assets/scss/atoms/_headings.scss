@@ -1,0 +1,42 @@
+// ==========================================================================
+// HEADINGS
+// ==========================================================================
+
+
+h1, .h1 {
+    @include font-scale(large);
+    color: palette(green, light);
+    margin-bottom: rem-calc(20);
+
+    @include respond-to(medium) {
+        @include font-scale(xlarge);
+    }
+}
+
+
+h2, .h2 {
+    @include font-scale(midlarge);
+    color: palette(green, light);
+    margin-bottom: rem-calc(30);
+
+    @include respond-to(medium) {
+        @include font-scale(large);
+        margin-bottom: rem-calc(50);
+    }
+}
+
+.h--lowmargin {
+    margin-bottom: rem-calc(20);
+}
+
+h3, .h3 {
+    @include font-scale(mid);
+    color: palette(green, light);
+    margin-bottom: rem-calc(15);
+
+    @include respond-to(medium) {
+        @include font-scale(midlarge);
+    }
+
+}
+

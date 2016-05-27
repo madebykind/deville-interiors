@@ -1,0 +1,20 @@
+// 5. FONT WEIGHT MIXIN
+// ==========================================================================
+//
+// Set numerical font-weight based on weight name
+//
+// EXAMPLE:
+//
+// h1 {
+//    @include font-weight(book);
+// }
+//
+// OUTPUT:
+//
+// h1 {
+//    font-weight: 400;
+// }
+
+@mixin font-weight($weight) {
+    font-weight: map-get(map-get($type, weights), $weight);
+}

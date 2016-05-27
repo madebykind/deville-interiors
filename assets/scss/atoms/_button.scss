@@ -1,0 +1,90 @@
+// ==========================================================================
+// BUTTONS
+// ==========================================================================
+
+
+.btn {
+    @include link {
+
+        @include font-family(map-get($type, secondary-family)); // overrides defaults
+
+        line-height: 1;
+        font-size: calc-font-size(base);
+
+        cursor: pointer;
+
+        background-color: palette(grey, light);
+        background-image: none;
+        color: white;
+
+        border: 1px solid transparent; // aligns properly to other buttons with borders
+        outline: none;
+
+        text-align: center;
+        text-decoration: none;
+
+        transition: background 250ms ease,
+                        color 250ms ease;
+
+        display: inline-block;
+
+        padding: rem-calc(7 10);
+    }
+
+    @include link-hover {
+        background-color: palette(green, light);
+    }
+}
+
+
+
+.btn--large {
+    @include link {
+        font-size: calc-font-size(mid);
+
+        padding: rem-calc(7 15);
+    }
+}
+
+
+// 
+// OUTLINE BUTTONS
+// ==========================================================================
+.btn--outline {
+    @include link {
+        background-color: transparent;
+        color: palette(grey, light);
+        border-color: palette(grey, light);
+    }
+
+    @include link-hover {
+        color: palette(green, light);
+        border-color: palette(green, light);
+    }
+}
+
+.btn--outline.btn--white {
+    @include link {
+        color: white;
+        border-color: white;
+    }
+
+    @include link-hover {
+        background-color: white;
+        color: palette(green, dark);
+    }
+    
+}
+
+.btn--outline.btn--green-light {
+    @include link {
+        color: palette(green, light);
+        border-color: palette(green, light);
+    }
+
+    @include link-hover {
+        background-color: palette(green, light);
+        color: white;
+    }
+    
+}

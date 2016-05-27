@@ -1,0 +1,34 @@
+// ==========================================================================
+// BANNER
+// ==========================================================================
+
+
+.banner {
+    @include respond-to(medium) {
+        padding: rem-calc(0 20 20);
+    }
+}
+
+.banner--gallery {
+    padding-bottom: 0;
+}
+
+.banner--iframe {
+    width: 100%;
+    position: relative;
+    padding: 0;
+    padding-top: 50%;
+
+    @include respond-to(medium) {
+        margin: rem-calc(0 20 20);
+        width: calc(100% - #{rem-calc(40)});
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

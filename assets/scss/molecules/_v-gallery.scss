@@ -1,0 +1,19 @@
+// ==========================================================================
+// VERTICAL GALLERY
+// ==========================================================================
+
+.v-gallery {
+
+}
+
+.v-gallery__item {
+    padding-bottom: rem-calc(15);
+
+    @include respond-to(medium) {
+        padding-bottom: rem-calc(20);
+    }
+
+    img {
+        width: 100%;
+    }
+}
