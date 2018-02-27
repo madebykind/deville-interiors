@@ -1,0 +1,279 @@
+// ==========================================================================
+// GRID LAYOUT
+// ==========================================================================
+
+/*doc
+---
+title: Grid
+name: 2_grid
+category: layout
+---
+
+*/
+
+/*doc
+---
+title: Columns
+name: 2_grid_columns
+category: layout
+parent: 2_grid
+---
+
+Columns are available via `.g__col--n` modifier classes. You still need to apply `.g__col` base class.
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--2">
+            <div class="sg-Block">2</div>
+        </div>
+        <div class="g__col g__col--2">
+            <div class="sg-Block">2</div>
+        </div>
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+    </div>
+    <div class="g">
+
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+        <div class="g__col g__col--6">
+            <div class="sg-Block">6</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--5">
+            <div class="sg-Block">5</div>
+        </div>
+        <div class="g__col g__col--7">
+            <div class="sg-Block">7</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--8">
+            <div class="sg-Block">8</div>
+        </div>
+        <div class="g__col g__col--9">
+            <div class="sg-Block">9</div>
+        </div>
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+        <div class="g__col g__col--2">
+            <div class="sg-Block">2</div>
+        </div>
+        <div class="g__col g__col--10">
+            <div class="sg-Block">10</div>
+        </div>
+        <div class="g__col g__col--11">
+            <div class="sg-Block">11</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+    </div>
+</div>
+```
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--4">
+            <div class="sg-thing">
+                4 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.
+            </div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-thing">
+                4 column width. Donec euismod metus id elit consequat sodales et vitae diam. Quisque vulputate purus in dolor blandit dignissim. Donec scelerisque lorem dui, non porttitor lorem semper ac.
+            </div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-thing">
+                4 column width. Donec vestibulum tincidunt tortor sed facilisis. Pellentesque et orci quis tellus mollis feugiat tincidunt id tortor. Praesent vitae suscipit justo.
+            </div>
+        </div>
+    </div>
+</div>
+```
+*/
+
+.g {
+    @include clearfix();
+    display: block;
+    clear: both;
+
+    // [1] different breakpoints have different gutter widths
+    @each $bp, $config in $grids {
+        $width:             map-get($config, width);
+        $gutter:            map-get($config, gutter);
+
+        @include conditional-respond-to($bp, $width) {
+            margin-left: rem-calc(-$gutter);
+        }
+    }
+}
+
+
+/*doc
+---
+title: Responsive Columns
+name: 3_grid_responsive
+category: layout
+parent: 2_grid
+---
+
+### Responsive columns
+
+You can use additional modifier classes for columns that span different widths depending on a particular breakpoint. For example the following layout consists of two columns that are full-width by default, but they switch to a six column width at the 'large' breakpoint:
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--12 g__col--6--large">12 / 6 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.</div>
+        <div class="g__col g__col--12 g__col--6--large">12 / 6 column width. Donec euismod metus id elit consequat sodales et vitae diam. Quisque vulputate purus in dolor blandit dignissim. Donec scelerisque lorem dui, non porttitor lorem semper ac.</div>
+    </div>
+</div>
+```
+*/
+
+.g__col {
+    float: left;
+    width: 100%;
+
+    // [1] different breakpoints have different gutter widths
+    @each $bp, $config in $grids {
+        $width:             map-get($config, width);
+        $gutter:            map-get($config, gutter);
+
+        @include conditional-respond-to($bp, $width) {
+            padding-left: rem-calc($gutter);
+        }
+    }
+}
+
+// Build out columns from grid config
+@each $bp, $config in $grids {
+
+    $cols:              map-get($config, columns);
+    $width:             map-get($config, width);
+    $selector-suffix:   if($bp == 'base', '', '--#{$bp}');
+    $output:            if(map-get($config, output), map-get($config, output), false);
+
+    @include conditional-respond-to($bp, $width) {
+
+        @if ($output) {
+            @each $i in $output {
+                .g__col--#{$i}#{$selector-suffix} {
+                    width: percentage($i / $cols);
+                }
+            }
+        } @else {
+            @for $i from 1 through $cols {
+                .g__col--#{$i}#{$selector-suffix} {
+                    width: percentage($i / $cols);
+                }
+            }
+        }
+    }
+}
+
+
+/*doc
+---
+title: Center columns
+name: 2_grid_columns_center
+category: layout
+parent: 2_grid
+---
+
+Special class for centering columns that are not full-width.
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--8 g__col--center">Centered, 8 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.</div>
+    </div>
+</div>
+```
+*/
+
+// Centering grid columns
+@mixin _grid__center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@each $bp, $config in $grids {
+
+    $width:             map-get($config, width);
+    $selector-suffix:   if($bp == 'base', '', '--#{$bp}');
+
+    @include conditional-respond-to($bp, $width) {
+        .g__col--center#{$selector-suffix} {
+            @include _grid__center;
+        }
+    }
+}
+
+
+/*doc
+---
+title: Right columns
+name: 2_grid_columns_right
+category: layout
+parent: 2_grid
+---
+
+A right aligned col.
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--8 g__col--right">Right aligned, 8 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.</div>
+    </div>
+</div>
+```
+*/
+
+@each $bp, $config in $grids {
+
+    $width:             map-get($config, width);
+    $selector-suffix:   if($bp == 'base', '', '--#{$bp}');
+
+    @include conditional-respond-to($bp, $width) {
+        .g__col--right#{$selector-suffix} {
+            float: right;
+        }
+    }
+}
+

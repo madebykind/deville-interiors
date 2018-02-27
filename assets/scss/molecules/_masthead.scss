@@ -1,0 +1,75 @@
+// ==========================================================================
+// MASTHEAD
+// ==========================================================================
+
+
+.masthead {
+    @include clearfix();
+    padding: rem-calc(20 0);
+
+    @include respond-to(medium) {
+        padding: rem-calc(55 20 35);
+    }
+}
+
+.masthead__logo {
+    margin: 0 auto rem-calc(30);
+    width: rem-calc(200);
+
+    @include respond-to(medium) {
+        margin: rem-calc(25 20 30 20);
+        float: left;
+        width: rem-calc(250);
+    }
+}
+
+.masthead__contact {
+    margin-bottom: rem-calc(15);
+    float: left;
+
+    @include respond-to(medium) {
+        float: right;
+        margin-top: rem-calc(10);
+    }
+
+    a {
+        margin-right: rem-calc(15);
+    }
+
+    span {
+        @include font-family(map-get($type, secondary-family));
+        @include font-scale(base);
+        @include font-weight(bold);
+        margin-right: rem-calc(20);
+    }
+}
+
+.masthead__toggle {
+    float: right;
+    margin-top: rem-calc(9);
+}
+
+.masthead__main-nav {
+    clear: both;
+
+    .js & {
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms;
+
+        @include respond-to(medium) {
+            max-height: rem-calc(300);
+        }
+    }
+
+    &.is-active {
+        max-height: rem-calc(300);
+    }
+
+    @include respond-to(medium) {
+        clear: right;
+        float: right;
+        white-space: nowrap;
+    }
+}

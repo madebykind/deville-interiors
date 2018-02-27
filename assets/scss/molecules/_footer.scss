@@ -1,0 +1,61 @@
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+
+
+.footer {
+    padding: rem-calc(20);
+    @include clearfix;
+
+    @include respond-to(medium) {
+        padding: rem-calc(75 20 40 20);
+    }
+
+    @include respond-to(large) {
+        padding-left: rem-calc(65);
+        padding-right: rem-calc(65);
+    }
+}
+
+.footer__smallprint {
+    @include respond-to(medium) {
+        float: left;
+    }
+
+}
+
+.footer__contact {
+    margin: rem-calc(15 0);
+
+    @include respond-to(medium) {
+        float: left;
+        clear: left;
+        margin-top: rem-calc(35);
+    }
+
+    a {
+        margin-right: rem-calc(15);
+    }
+
+    span {
+        @include font-family(map-get($type, secondary-family));
+        @include font-scale(base);
+        @include font-weight(bold);
+        margin-right: rem-calc(20);
+    }
+}
+
+.footer__nav {
+    border-top: 1px solid palette(grey, light);
+    margin-top: rem-calc(15);
+    padding-top: rem-calc(15);
+
+    @include respond-to(medium) {
+        float: right;
+        border-top: none;
+        border-left: 1px solid palette(grey, light);
+        margin-top: rem-calc(0);
+        padding-top: rem-calc(0);
+        padding-left: rem-calc(20);
+    }
+}

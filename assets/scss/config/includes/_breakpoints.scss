@@ -1,0 +1,32 @@
+// ==========================================================================
+// BREAKPOINT CONFIG
+// ==========================================================================
+//
+//
+// @include respond-to("small") {
+//      @content
+// }
+//
+
+
+// BREAKPOINT CONFIG
+// ==========================================================================
+
+@include breakpoint-set('to ems', true);
+
+// Build width-based breakpoints from the grid
+@each $bp, $config in $grids {
+    @if map-has-key($config, width) {
+        $width: map-get($config, width);
+        @if map-get($config, 'no-queries') {
+            @include add-breakpoint($bp, ($width * 1px, 'no-query' true));
+        }
+        @else {
+            @include add-breakpoint($bp, ($width * 1px));
+        }
+    }
+}
+
+@include add-breakpoint('high resolution', min-resolution 1.5dppx);
+@include add-breakpoint('landscape', orientation landscape);
+@include add-breakpoint('portrait', orientation portrait);

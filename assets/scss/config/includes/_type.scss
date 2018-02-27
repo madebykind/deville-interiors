@@ -1,0 +1,39 @@
+$type: (
+    base-size: 16,
+    default-family: ("Libre Baskerville", serif),
+    secondary-family: ("Lato", sans-serif),
+    weights: (
+        regular: 500,
+        bold: 600
+    ),
+    sizes: (
+        xsmall: (
+            font-size: 12,
+            line-height: 23
+        ),
+        small: (
+            font-size: 14,
+            line-height: 23
+        ),
+        base: (
+            font-size: 16,
+            line-height: 27
+        ),
+        mid: (
+            font-size: 18,
+            line-height: 27
+        ),
+        midlarge: (
+            font-size: 21,
+            line-height: 30
+        ),
+        large: (
+            font-size: 28,
+            line-height: 37
+        ),
+        xlarge: (
+            font-size: 31,
+            line-height: 42
+        )
+    )
+);

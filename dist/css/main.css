@@ -1,0 +1,1404 @@
+@charset "UTF-8";
+/*doc
+---
+title: Align text
+name: 1_align_text
+category: utilities
+---
+
+This utility centers all text with `.u-text-center`, right aligns text with `.u-text-right` and left aligns text with `.u-text-left`:
+
+```html_example
+<h3 class="u-text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum et, odit illum molestias architecto obcaecati nihil nemo aspernatur placeat, explicabo pariatur unde, magnam tempore! Laudantium perferendis consequatur odit debitis hic?</h3>
+```
+
+```html_example
+<h3 class="u-text-right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum et, odit illum molestias architecto obcaecati nihil nemo aspernatur placeat, explicabo pariatur unde, magnam tempore! Laudantium perferendis consequatur odit debitis hic?</h3>
+```
+
+```html_example
+<h3 class="u-text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum et, odit illum molestias architecto obcaecati nihil nemo aspernatur placeat, explicabo pariatur unde, magnam tempore! Laudantium perferendis consequatur odit debitis hic?</h3>
+```
+
+*/
+.u-text-center {
+  text-align: center; }
+
+.u-text-left {
+  text-align: left; }
+
+.u-text-right {
+  text-align: right; }
+
+/*doc
+---
+title: Color text
+name: 4_color_text
+category: utilities
+---
+
+This utility forces text to a particular color. It should only be used as a last resort when
+ text really needs to be another color, for no real/semantic reason, eg Location titles in the footer.
+
+```html_example
+<p class="u-text-color--grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+ Cum et, odit illum molestias architecto obcaecati nihil nemo aspernatur placeat</p>
+<p class="u-text-color--grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+ Cum et, odit illum molestias architecto obcaecati nihil nemo aspernatur placeat</p>
+<p class="u-text-color--grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+ Cum et, odit illum molestias architecto obcaecati nihil nemo aspernatur placeat</p>
+
+```
+
+*/
+.u-text-color--grey-dark {
+  color: #303030 !important; }
+
+.u-text-color--grey {
+  color: #4a4a4a !important; }
+
+.u-text-color--grey-light {
+  color: #b7c1c0 !important; }
+
+.u-text-color--grey-xlight {
+  color: #e5e5e5 !important; }
+
+.u-text-color--green-dark {
+  color: #4c514a !important; }
+
+.u-text-color--green {
+  color: #636363 !important; }
+
+.u-text-color--green-light {
+  color: #879796 !important; }
+
+.u-text-color--black {
+  color: black; }
+
+/*doc
+---
+title: Inverse
+name: 13_inverse
+category: utilities
+---
+
+The inverse color utility will set all text elements to white. This module is commonly used in conjuction with the [island][12_islands] classes.
+
+```html_example
+<div class="u-inverse island--dark">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Vivamus pharetra varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+```
+
+*/
+.u-inverse h1, .u-inverse h2, .u-inverse p, .u-inverse * {
+  color: white; }
+.u-inverse a, .u-inverse a:link, .u-inverse a:visited {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5); }
+.u-inverse a:hover, .u-inverse a:focus {
+  border-color: white; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  max-width: 100%; }
+
+html {
+  font-size: 16px;
+  height: 100%;
+  overflow-y: scroll;
+  line-height: 1; }
+
+body {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1rem;
+  line-height: 1.6875rem;
+  background-color: #e5e5e5;
+  color: black;
+  min-width: 20rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased; }
+  body, body * {
+    -webkit-text-size-adjust: 100%; }
+
+*[hidden] {
+  display: none; }
+
+b,
+strong {
+  font-weight: 600; }
+
+em {
+  font-style: italic; }
+  em em {
+    font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+img, object, picture {
+  max-width: 100%;
+  display: block; }
+
+picture > img {
+  width: 100%; }
+
+a img {
+  border: none; }
+
+input[type="submit"],
+input[type="button"],
+button {
+  line-height: normal;
+  -webkit-appearance: none;
+  margin: 0; }
+
+.wrapper {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; }
+
+@media (min-width: 50em) {
+  .wrapper--medium {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem; } }
+
+/*doc
+---
+title: Grid
+name: 2_grid
+category: layout
+---
+
+*/
+/*doc
+---
+title: Columns
+name: 2_grid_columns
+category: layout
+parent: 2_grid
+---
+
+Columns are available via `.g__col--n` modifier classes. You still need to apply `.g__col` base class.
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+        <div class="g__col g__col--2">
+            <div class="sg-Block">2</div>
+        </div>
+        <div class="g__col g__col--2">
+            <div class="sg-Block">2</div>
+        </div>
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+    </div>
+    <div class="g">
+
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+        <div class="g__col g__col--6">
+            <div class="sg-Block">6</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--5">
+            <div class="sg-Block">5</div>
+        </div>
+        <div class="g__col g__col--7">
+            <div class="sg-Block">7</div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-Block">4</div>
+        </div>
+        <div class="g__col g__col--8">
+            <div class="sg-Block">8</div>
+        </div>
+        <div class="g__col g__col--9">
+            <div class="sg-Block">9</div>
+        </div>
+        <div class="g__col g__col--3">
+            <div class="sg-Block">3</div>
+        </div>
+        <div class="g__col g__col--2">
+            <div class="sg-Block">2</div>
+        </div>
+        <div class="g__col g__col--10">
+            <div class="sg-Block">10</div>
+        </div>
+        <div class="g__col g__col--11">
+            <div class="sg-Block">11</div>
+        </div>
+        <div class="g__col g__col--1">
+            <div class="sg-Block">1</div>
+        </div>
+    </div>
+</div>
+```
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--4">
+            <div class="sg-thing">
+                4 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.
+            </div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-thing">
+                4 column width. Donec euismod metus id elit consequat sodales et vitae diam. Quisque vulputate purus in dolor blandit dignissim. Donec scelerisque lorem dui, non porttitor lorem semper ac.
+            </div>
+        </div>
+        <div class="g__col g__col--4">
+            <div class="sg-thing">
+                4 column width. Donec vestibulum tincidunt tortor sed facilisis. Pellentesque et orci quis tellus mollis feugiat tincidunt id tortor. Praesent vitae suscipit justo.
+            </div>
+        </div>
+    </div>
+</div>
+```
+*/
+.g {
+  display: block;
+  clear: both;
+  margin-left: -0.9375rem; }
+  .g:before, .g:after {
+    content: "";
+    display: table; }
+  .g:after {
+    clear: both; }
+  @media (min-width: 30em) {
+    .g {
+      margin-left: -0.9375rem; } }
+  @media (min-width: 50em) {
+    .g {
+      margin-left: -1.25rem; } }
+  @media (min-width: 62.5em) {
+    .g {
+      margin-left: -1.25rem; } }
+  @media (min-width: 75em) {
+    .g {
+      margin-left: -1.25rem; } }
+
+/*doc
+---
+title: Responsive Columns
+name: 3_grid_responsive
+category: layout
+parent: 2_grid
+---
+
+### Responsive columns
+
+You can use additional modifier classes for columns that span different widths depending on a particular breakpoint. For example the following layout consists of two columns that are full-width by default, but they switch to a six column width at the 'large' breakpoint:
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--12 g__col--6--large">12 / 6 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.</div>
+        <div class="g__col g__col--12 g__col--6--large">12 / 6 column width. Donec euismod metus id elit consequat sodales et vitae diam. Quisque vulputate purus in dolor blandit dignissim. Donec scelerisque lorem dui, non porttitor lorem semper ac.</div>
+    </div>
+</div>
+```
+*/
+.g__col {
+  float: left;
+  width: 100%;
+  padding-left: 0.9375rem; }
+  @media (min-width: 30em) {
+    .g__col {
+      padding-left: 0.9375rem; } }
+  @media (min-width: 50em) {
+    .g__col {
+      padding-left: 1.25rem; } }
+  @media (min-width: 62.5em) {
+    .g__col {
+      padding-left: 1.25rem; } }
+  @media (min-width: 75em) {
+    .g__col {
+      padding-left: 1.25rem; } }
+
+.g__col--1 {
+  width: 50%; }
+
+.g__col--2 {
+  width: 100%; }
+
+@media (min-width: 30em) {
+  .g__col--1--small {
+    width: 8.33333%; }
+
+  .g__col--2--small {
+    width: 16.66667%; }
+
+  .g__col--3--small {
+    width: 25%; }
+
+  .g__col--4--small {
+    width: 33.33333%; }
+
+  .g__col--5--small {
+    width: 41.66667%; }
+
+  .g__col--6--small {
+    width: 50%; }
+
+  .g__col--7--small {
+    width: 58.33333%; }
+
+  .g__col--8--small {
+    width: 66.66667%; }
+
+  .g__col--9--small {
+    width: 75%; }
+
+  .g__col--10--small {
+    width: 83.33333%; }
+
+  .g__col--11--small {
+    width: 91.66667%; }
+
+  .g__col--12--small {
+    width: 100%; } }
+@media (min-width: 50em) {
+  .g__col--1--medium {
+    width: 8.33333%; }
+
+  .g__col--2--medium {
+    width: 16.66667%; }
+
+  .g__col--3--medium {
+    width: 25%; }
+
+  .g__col--4--medium {
+    width: 33.33333%; }
+
+  .g__col--5--medium {
+    width: 41.66667%; }
+
+  .g__col--6--medium {
+    width: 50%; }
+
+  .g__col--7--medium {
+    width: 58.33333%; }
+
+  .g__col--8--medium {
+    width: 66.66667%; }
+
+  .g__col--9--medium {
+    width: 75%; }
+
+  .g__col--10--medium {
+    width: 83.33333%; }
+
+  .g__col--11--medium {
+    width: 91.66667%; }
+
+  .g__col--12--medium {
+    width: 100%; } }
+@media (min-width: 62.5em) {
+  .g__col--1--large {
+    width: 8.33333%; }
+
+  .g__col--2--large {
+    width: 16.66667%; }
+
+  .g__col--3--large {
+    width: 25%; }
+
+  .g__col--4--large {
+    width: 33.33333%; }
+
+  .g__col--5--large {
+    width: 41.66667%; }
+
+  .g__col--6--large {
+    width: 50%; }
+
+  .g__col--7--large {
+    width: 58.33333%; }
+
+  .g__col--8--large {
+    width: 66.66667%; }
+
+  .g__col--9--large {
+    width: 75%; }
+
+  .g__col--10--large {
+    width: 83.33333%; }
+
+  .g__col--11--large {
+    width: 91.66667%; }
+
+  .g__col--12--large {
+    width: 100%; } }
+@media (min-width: 75em) {
+  .g__col--1--xlarge {
+    width: 8.33333%; }
+
+  .g__col--2--xlarge {
+    width: 16.66667%; }
+
+  .g__col--3--xlarge {
+    width: 25%; }
+
+  .g__col--4--xlarge {
+    width: 33.33333%; }
+
+  .g__col--5--xlarge {
+    width: 41.66667%; }
+
+  .g__col--6--xlarge {
+    width: 50%; }
+
+  .g__col--7--xlarge {
+    width: 58.33333%; }
+
+  .g__col--8--xlarge {
+    width: 66.66667%; }
+
+  .g__col--9--xlarge {
+    width: 75%; }
+
+  .g__col--10--xlarge {
+    width: 83.33333%; }
+
+  .g__col--11--xlarge {
+    width: 91.66667%; }
+
+  .g__col--12--xlarge {
+    width: 100%; } }
+/*doc
+---
+title: Center columns
+name: 2_grid_columns_center
+category: layout
+parent: 2_grid
+---
+
+Special class for centering columns that are not full-width.
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--8 g__col--center">Centered, 8 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.</div>
+    </div>
+</div>
+```
+*/
+.g__col--center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
+
+@media (min-width: 30em) {
+  .g__col--center--small {
+    float: none;
+    margin-left: auto;
+    margin-right: auto; } }
+@media (min-width: 50em) {
+  .g__col--center--medium {
+    float: none;
+    margin-left: auto;
+    margin-right: auto; } }
+@media (min-width: 62.5em) {
+  .g__col--center--large {
+    float: none;
+    margin-left: auto;
+    margin-right: auto; } }
+@media (min-width: 75em) {
+  .g__col--center--xlarge {
+    float: none;
+    margin-left: auto;
+    margin-right: auto; } }
+/*doc
+---
+title: Right columns
+name: 2_grid_columns_right
+category: layout
+parent: 2_grid
+---
+
+A right aligned col.
+
+```wrapper_html_example
+<div class="wrapper">
+    <div class="g">
+        <div class="g__col g__col--8 g__col--right">Right aligned, 8 column width. Phasellus eu porta arcu, sed eleifend est. Nullam vehicula feugiat ex ac tempor. Nullam id sapien lacus. Morbi vel ultricies dolor, ac blandit turpis.</div>
+    </div>
+</div>
+```
+*/
+.g__col--right {
+  float: right; }
+
+@media (min-width: 30em) {
+  .g__col--right--small {
+    float: right; } }
+@media (min-width: 50em) {
+  .g__col--right--medium {
+    float: right; } }
+@media (min-width: 62.5em) {
+  .g__col--right--large {
+    float: right; } }
+@media (min-width: 75em) {
+  .g__col--right--xlarge {
+    float: right; } }
+/*doc
+---
+title: Cell
+name: 3_cell
+category: layout
+---
+
+To add regular padding to any side of an element, use `.cell` layout
+
+The intervals cell will output are defined in `cells.yml`.
+
+```html_example
+<div class="cell">
+    This element will have the default padding all round
+</div>
+<div class="cell-40">
+    This element will have the 40px padding all round
+</div>
+```
+*/
+/*doc
+---
+title: Vertical cells
+name: 3_cell_vertical
+category: layout
+parent: 3_cell
+---
+
+* `.cell-v*` classes apply both top & bottom padding
+* `.cell-t*` classes apply top padding only
+* `.cell-b*` classes apply bottom padding only
+
+```html_example
+<div class="cell-v20">
+    This element will have 20px top and bottom padding
+</div>
+<div class="cell-t20">
+    This element will have 20px top padding
+</div>
+<div class="cell-b20">
+    This element will have 20px bottom padding
+</div>
+```
+*/
+.cell {
+  padding: 1.25rem; }
+
+.cell-b20 {
+  padding-bottom: 1.25rem; }
+
+.cell-t20 {
+  padding-top: 1.25rem; }
+
+.cell-t40 {
+  padding-top: 2.5rem; }
+
+.cell-v40 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem; }
+
+@media (min-width: 50em) {
+  .cell-b50--medium {
+    padding-bottom: 3.125rem; } }
+@media (min-width: 50em) {
+  .cell-t75--medium {
+    padding-top: 4.6875rem; } }
+.link--plain, a[href^=tel], .nav .nav__item, .nav--list .nav__item, .link--plain:link, a[href^=tel]:link, .nav .nav__item:link, .nav--list .nav__item:link, .link--plain:visited, a[href^=tel]:visited, .nav .nav__item:visited, .nav--list .nav__item:visited {
+  text-decoration: none;
+  color: currentColor; }
+
+/*doc
+---
+title: Islands
+name: 12_islands
+category: atoms
+---
+
+Islands set the background colours on elements. They do not change the
+ styling of any child components beyond applying `trim()`, or set the padding — this
+ is instead done via [cell][3_cell]
+
+By default all islands are clearfixed with a white background.
+
+```dark_html_example
+<div class="island">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+     varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+```
+*/
+.island {
+  display: block;
+  background-color: white; }
+  .island:before, .island:after {
+    content: "";
+    display: table; }
+  .island:after {
+    clear: both; }
+
+/*doc
+---
+title: Colors
+name: 12_islands_colors
+category: atoms
+parent: 12_islands
+---
+
+Colour modifiers are automatically generated for every colour in the palette
+
+
+### Grey black islands
+
+
+```dark_html_example
+<div class="island">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+    varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+```
+
+```html_example
+
+<div class="island island--xlight">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+    varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+
+<div class="island island--light">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+    varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+<div class="island  island--grey">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+     varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+
+<div class="island island--mid-dark u-inverse">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+    varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+
+<div class="island island--dark u-inverse">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+    varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+
+<div class="island island--xdark u-inverse">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra
+    varius ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+
+<div class="island island--black u-inverse">
+    <h2>Fusce ipsum sapien</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra varius
+    ullamcorper. Aliquam et nunc posuere, facilisis orci ac, luctus arcu.<p>
+</div>
+```
+
+*/
+.island--black {
+  background-color: black; }
+
+.island--grey-dark {
+  background-color: #303030; }
+
+.island--grey {
+  background-color: #4a4a4a; }
+
+.island--grey-light {
+  background-color: #b7c1c0; }
+
+.island--grey-xlight {
+  background-color: #e5e5e5; }
+
+.island--green-dark {
+  background-color: #4c514a; }
+
+.island--green {
+  background-color: #636363; }
+
+.island--green-light {
+  background-color: #879796; }
+
+.nav {
+  text-align: center; }
+  .nav .nav__item, .nav .nav__item:link, .nav .nav__item:visited {
+    display: block;
+    padding: 0.3125rem;
+    border: 1px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.125rem;
+    line-height: 1.6875rem;
+    font-family: "Lato", sans-serif;
+    color: #879796;
+    transition: color 250ms; }
+    .nav .nav__item:first-child, .nav .nav__item:link:first-child, .nav .nav__item:visited:first-child {
+      border-top-color: transparent; }
+    .nav .nav__item.is-active, .nav .nav__item:link.is-active, .nav .nav__item:visited.is-active {
+      color: #4c514a; }
+  .nav .nav__item:hover, .nav .nav__item:focus {
+    color: #4c514a; }
+  @media (min-width: 50em) {
+    .nav .nav__item, .nav .nav__item:link, .nav .nav__item:visited {
+      display: inline-block;
+      border-color: transparent;
+      padding: 0.3125rem 0.9375rem; }
+      .nav .nav__item.is-active, .nav .nav__item:link.is-active, .nav .nav__item:visited.is-active {
+        border-color: #4c514a; } }
+
+.nav--list .nav__item, .nav--list .nav__item:link, .nav--list .nav__item:visited {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.4375rem;
+  color: #303030; }
+  .nav--list .nav__item.is-active, .nav--list .nav__item:link.is-active, .nav--list .nav__item:visited.is-active {
+    font-weight: bold;
+    text-transform: uppercase; }
+.nav--list .nav__item:hover, .nav--list .nav__item:focus {
+  text-decoration: underline; }
+
+.btn, .btn:link, .btn:visited {
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #b7c1c0;
+  background-image: none;
+  color: white;
+  border: 1px solid transparent;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  transition: background 250ms ease, color 250ms ease;
+  display: inline-block;
+  padding: 0.4375rem 0.625rem; }
+.btn:hover, .btn:focus {
+  background-color: #879796; }
+
+.btn--large, .btn--large:link, .btn--large:visited {
+  font-size: 1.125rem;
+  padding: 0.4375rem 0.9375rem; }
+
+.btn--outline, .btn--outline:link, .btn--outline:visited {
+  background-color: transparent;
+  color: #b7c1c0;
+  border-color: #b7c1c0; }
+.btn--outline:hover, .btn--outline:focus {
+  color: #879796;
+  border-color: #879796; }
+
+.btn--outline.btn--white, .btn--outline.btn--white:link, .btn--outline.btn--white:visited {
+  color: white;
+  border-color: white; }
+.btn--outline.btn--white:hover, .btn--outline.btn--white:focus {
+  background-color: white;
+  color: #4c514a; }
+
+.btn--outline.btn--green-light, .btn--outline.btn--green-light:link, .btn--outline.btn--green-light:visited {
+  color: #879796;
+  border-color: #879796; }
+.btn--outline.btn--green-light:hover, .btn--outline.btn--green-light:focus {
+  background-color: #879796;
+  color: white; }
+
+/*doc
+---
+title: Hamburger
+name: 9_hamburger
+category: atoms
+---
+
+The hamburger button is a CSS3 menu item with a text fallback:
+
+```html_example
+<button class="hamburger">
+    <span>Menu</span>
+</button>
+```
+*/
+.hamburger {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  position: relative;
+  display: block;
+  width: 1.0625rem;
+  height: 0.8125rem;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 0.0625rem solid #636363;
+  border-top: 0.0625rem solid #636363;
+  transition: border-color 200ms ease-out;
+  outline: none; }
+  .hamburger::after, .hamburger::before {
+    border-bottom: 0.0625rem solid #636363;
+    top: 50%;
+    margin-top: -0.03125rem;
+    content: '';
+    height: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: border-color 200ms ease-out, transform 200ms ease-out; }
+  .hamburger:hover, .hamburger:hover::after, .hamburger:hover::before, .hamburger:focus, .hamburger:focus::after, .hamburger:focus::before {
+    border-color: #4c514a; }
+
+/*doc
+---
+title: Active state
+name: 9_hamburger_active
+category: atoms
+parent: 9_hamburger
+---
+
+The active state is activated when a user clicks on the element and a `.is-active` class is added to the button:
+
+```html_example
+<button class="hamburger is-active">
+    <span>Menu</span>
+</button>
+```
+*/
+.hamburger.is-active {
+  border-color: transparent; }
+  .hamburger.is-active::after {
+    transform: rotateZ(45deg); }
+  .hamburger.is-active::before {
+    transform: rotateZ(-45deg); }
+
+@media (min-width: 50em) {
+  .banner {
+    padding: 0rem 1.25rem 1.25rem; } }
+
+.banner--gallery {
+  padding-bottom: 0; }
+
+.banner--iframe {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  padding-top: 50%; }
+  @media (min-width: 50em) {
+    .banner--iframe {
+      margin: 0rem 1.25rem 1.25rem;
+      width: calc(100% - 2.5rem); } }
+  .banner--iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+h1, .h1 {
+  font-size: 1.75rem;
+  line-height: 2.3125rem;
+  color: #879796;
+  margin-bottom: 1.25rem; }
+  @media (min-width: 50em) {
+    h1, .h1 {
+      font-size: 1.9375rem;
+      line-height: 2.625rem; } }
+
+h2, .h2 {
+  font-size: 1.3125rem;
+  line-height: 1.875rem;
+  color: #879796;
+  margin-bottom: 1.875rem; }
+  @media (min-width: 50em) {
+    h2, .h2 {
+      font-size: 1.75rem;
+      line-height: 2.3125rem;
+      margin-bottom: 3.125rem; } }
+
+.h--lowmargin {
+  margin-bottom: 1.25rem; }
+
+h3, .h3 {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  color: #879796;
+  margin-bottom: 0.9375rem; }
+  @media (min-width: 50em) {
+    h3, .h3 {
+      font-size: 1.3125rem;
+      line-height: 1.875rem; } }
+
+p {
+  font-family: "Lato", sans-serif;
+  margin-bottom: 1.875rem; }
+
+small {
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.4375rem; }
+
+hr {
+  height: 0.4375rem;
+  font: 0/0 a;
+  border: none;
+  background: none;
+  background-image: url("/dist/images/hr.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 23.125rem;
+  margin: 1.875rem 0rem; }
+
+.hr--light {
+  background-image: url("/dist/images/hr-light.png"); }
+
+/*doc
+---
+title: Up
+name: 4_up
+category: layout
+---
+
+`.up-*` layout helper classes allow fine control of float clearing, and are used
+when grid classes used for multiline grids of items, with differing numbers of
+items per line at different breakpoints.
+
+It should typically be applied to the `.g` grid wrapper, but is not grid specific.
+The available classes are:
+
+* `.up-1`
+* `.up-2--medium`: 2 columns at small
+* `.up-3--medium`: 3 columns at medium
+* `.up-3--large`: 3 columns at large
+* `.up-4--large`: 4 columns at large
+
+If we find we need more splits / breakpoints, this component will need refactoring to
+generate classes procedurally.
+
+**NB** this module handles clearing only: to handle item widths use [the grid][2_grid]
+
+```html_example
+<div class="g up-1 up-2--medium up-3--large">
+        <div class="g__col g__col--6--medium g__col--4--large cell">
+            <img src="http://placehold.it/700x700" alt="">
+        </div>
+        <div class="g__col g__col--6--medium g__col--4--large cell">
+            <img src="http://placehold.it/700x500" alt="">
+        </div>
+        <div class="g__col g__col--6--medium g__col--4--large cell">
+            <img src="http://placehold.it/700x500" alt="">
+        </div>
+        <div class="g__col g__col--6--medium g__col--4--large cell">
+            <img src="http://placehold.it/700x300" alt="">
+        </div>
+        <div class="g__col g__col--6--medium g__col--4--large cell">
+            <img src="http://placehold.it/700x500" alt="">
+        </div>
+        <div class="g__col g__col--6--medium g__col--4--large cell">
+            <img src="http://placehold.it/700x800" alt="">
+        </div>
+    </div>
+</div>
+```
+*/
+.up-1 > * {
+  clear: left;
+  float: left;
+  width: 100%; }
+
+.up-2 > * {
+  clear: none;
+  float: left;
+  width: 50%; }
+  .up-2 > *:nth-child(odd) {
+    clear: left; }
+
+.up-2--small > * {
+  clear: none; }
+  @media (min-width: 30em) {
+    .up-2--small > * {
+      clear: none;
+      float: left;
+      width: 50%; }
+      .up-2--small > *:nth-child(odd) {
+        clear: left; } }
+
+@media (min-width: 50em) {
+  .up-3--medium > * {
+    clear: none;
+    float: left;
+    width: 33.33333%; }
+    .up-3--medium > *:nth-child(odd) {
+      clear: none; }
+    .up-3--medium > *:nth-child(3n+1) {
+      clear: left; } }
+
+.masthead {
+  padding: 1.25rem 0rem; }
+  .masthead:before, .masthead:after {
+    content: "";
+    display: table; }
+  .masthead:after {
+    clear: both; }
+  @media (min-width: 50em) {
+    .masthead {
+      padding: 3.4375rem 1.25rem 2.1875rem; } }
+
+.masthead__logo {
+  margin: 0 auto 1.875rem;
+  width: 12.5rem; }
+  @media (min-width: 50em) {
+    .masthead__logo {
+      margin: 1.5625rem 1.25rem 1.875rem 1.25rem;
+      float: left;
+      width: 15.625rem; } }
+
+.masthead__contact {
+  margin-bottom: 0.9375rem;
+  float: left; }
+  @media (min-width: 50em) {
+    .masthead__contact {
+      float: right;
+      margin-top: 0.625rem; } }
+  .masthead__contact a {
+    margin-right: 0.9375rem; }
+  .masthead__contact span {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6875rem;
+    font-weight: 600;
+    margin-right: 1.25rem; }
+
+.masthead__toggle {
+  float: right;
+  margin-top: 0.5625rem; }
+
+.masthead__main-nav {
+  clear: both; }
+  .js .masthead__main-nav {
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms; }
+    @media (min-width: 50em) {
+      .js .masthead__main-nav {
+        max-height: 18.75rem; } }
+  .masthead__main-nav.is-active {
+    max-height: 18.75rem; }
+  @media (min-width: 50em) {
+    .masthead__main-nav {
+      clear: right;
+      float: right;
+      white-space: nowrap; } }
+
+.panels__item {
+  text-align: center;
+  padding-bottom: 2.5rem; }
+  @media (min-width: 50em) {
+    .panels__item {
+      padding-bottom: 2.1875rem; } }
+
+.panels__image {
+  width: 100%;
+  border: 0.125rem solid white;
+  box-shadow: 0rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.9375rem; }
+
+.footer {
+  padding: 1.25rem; }
+  .footer:before, .footer:after {
+    content: "";
+    display: table; }
+  .footer:after {
+    clear: both; }
+  @media (min-width: 50em) {
+    .footer {
+      padding: 4.6875rem 1.25rem 2.5rem 1.25rem; } }
+  @media (min-width: 62.5em) {
+    .footer {
+      padding-left: 4.0625rem;
+      padding-right: 4.0625rem; } }
+
+@media (min-width: 50em) {
+  .footer__smallprint {
+    float: left; } }
+
+.footer__contact {
+  margin: 0.9375rem 0rem; }
+  @media (min-width: 50em) {
+    .footer__contact {
+      float: left;
+      clear: left;
+      margin-top: 2.1875rem; } }
+  .footer__contact a {
+    margin-right: 0.9375rem; }
+  .footer__contact span {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6875rem;
+    font-weight: 600;
+    margin-right: 1.25rem; }
+
+.footer__nav {
+  border-top: 1px solid #b7c1c0;
+  margin-top: 0.9375rem;
+  padding-top: 0.9375rem; }
+  @media (min-width: 50em) {
+    .footer__nav {
+      float: right;
+      border-top: none;
+      border-left: 1px solid #b7c1c0;
+      margin-top: 0rem;
+      padding-top: 0rem;
+      padding-left: 1.25rem; } }
+
+.v-gallery__item {
+  padding-bottom: 0.9375rem; }
+  @media (min-width: 50em) {
+    .v-gallery__item {
+      padding-bottom: 1.25rem; } }
+  .v-gallery__item img {
+    width: 100%; }
+
+.is-hidden {
+  display: none; }
+
+@media (min-width: 50em) {
+  .is-hidden--medium {
+    display: none; } }
+
+/**
+ * Featherlight - ultra slim jQuery lightbox
+ * Version 1.4.0 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2016, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+  .featherlight {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2147483647;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #333;
+    background: transparent; }
+
+  .featherlight:last-of-type {
+    background: rgba(0, 0, 0, 0.8); }
+
+  .featherlight:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -.25em; }
+
+  .featherlight .featherlight-content {
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: auto;
+    padding: 25px 25px 0;
+    border-bottom: 25px solid transparent;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+    background: #fff;
+    cursor: auto;
+    white-space: normal; }
+
+  .featherlight .featherlight-inner {
+    display: block; }
+
+  .featherlight .featherlight-close-icon {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    line-height: 25px;
+    width: 25px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial,sans-serif;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.3);
+    color: #000; }
+
+  .featherlight .featherlight-image {
+    width: 100%; }
+
+  .featherlight-iframe .featherlight-content {
+    border-bottom: 0;
+    padding: 0; }
+
+  .featherlight iframe {
+    border: 0; } }
+@media only screen and (max-width: 1024px) {
+  .featherlight .featherlight-content {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-height: 98%;
+    padding: 10px 10px 0;
+    border-bottom: 10px solid transparent; } }
+/**
+ * Featherlight Gallery – an extension for the ultra slim jQuery lightbox
+ * Version 1.4.0 - http://noelboss.github.io/featherlight/
+ *
+ * Copyright 2016, Noël Raoul Bossart (http://www.noelboss.com)
+ * MIT Licensed.
+**/
+@media all {
+  .featherlight-next, .featherlight-previous {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    bottom: 0;
+    left: 80%;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: transparent; }
+
+  .featherlight-previous {
+    left: 25px;
+    right: 80%; }
+
+  .featherlight-next:hover, .featherlight-previous:hover {
+    background: rgba(255, 255, 255, 0.25); }
+
+  .featherlight-next span, .featherlight-previous span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 82%;
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    margin-top: -40px;
+    text-shadow: 0 0 5px #fff;
+    color: #fff;
+    font-style: normal;
+    font-weight: 400; }
+
+  .featherlight-next span {
+    right: 5%;
+    left: auto; }
+
+  .featherlight-next:hover span, .featherlight-previous:hover span {
+    display: inline-block; }
+
+  .featherlight-loading .featherlight-next, .featherlight-loading .featherlight-previous {
+    display: none; } }
+@media only screen and (max-device-width: 1024px) {
+  .featherlight-next:hover, .featherlight-previous:hover {
+    background: 0 0; }
+
+  .featherlight-next span, .featherlight-previous span {
+    display: block; } }
+@media only screen and (max-width: 1024px) {
+  .featherlight-next, .featherlight-previous {
+    top: 10px;
+    right: 10px;
+    left: 85%; }
+
+  .featherlight-previous {
+    left: 10px;
+    right: 85%; }
+
+  .featherlight-next span, .featherlight-previous span {
+    margin-top: -30px;
+    font-size: 40px; } }
+
+/*# sourceMappingURL=main.css.map */

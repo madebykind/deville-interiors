@@ -1,0 +1,13 @@
+// ==========================================================================
+// PARAGRAPHS
+// ==========================================================================
+
+p {
+    @include font-family(map-get($type, secondary-family));
+    margin-bottom: rem-calc(30);
+}
+
+small {
+    @include font-family(map-get($type, secondary-family));
+    @include font-scale(xsmall);
+}

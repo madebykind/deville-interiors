@@ -1,0 +1,25 @@
+// ==========================================================================
+// PANELS
+// ==========================================================================
+
+
+.panels {
+
+}
+
+.panels__item {
+    text-align: center;
+    padding-bottom: rem-calc(40);
+
+    @include respond-to(medium) {
+        padding-bottom: rem-calc(35);
+    }
+}
+
+.panels__image {
+    width: 100%;
+    border: rem-calc(2) solid white;
+    box-shadow: rem-calc(0 2 5) transparentize(black, 0.8);
+    margin-bottom: rem-calc(15);
+}
+

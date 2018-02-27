@@ -1,0 +1,33 @@
+// ==========================================================================
+// LINKS ATOM
+// ==========================================================================
+
+
+a {
+    @include link {
+
+    }
+
+    @include link-hover {
+        
+    }
+}
+
+
+
+.link--plain {
+    @include link {
+        text-decoration: none;
+        color: currentColor;
+    }
+
+    @include link-hover {
+        
+    }
+}
+
+
+
+a[href^=tel] {
+    @extend .link--plain;
+}
